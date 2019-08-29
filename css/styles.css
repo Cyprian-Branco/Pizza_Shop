@@ -1,0 +1,8 @@
+.section1{
+    background: url(images/b_image.png);
+    text-align: center;
+    background-color: black;
+    padding: 150px;
+    background-repeat: no-repeat;
+    color: azure;
+}
