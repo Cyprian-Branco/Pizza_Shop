@@ -112,13 +112,13 @@
             <div class="row">
                 <div class="section5">
                     <div class="form-group">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Input Your name:</label>
                             <input type="text" name="name" id="name">
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label>Input your address</label>
                             <input type="text" name="address" id="address" placeholder="Eg. Street name">
                             <input type="text" name="city" id="city" placeholder="Eg. Nairobi">
@@ -129,6 +129,27 @@
                 <button type="submit" class="btn-primary" id="btn-submit">Checkout</button>
             </div>
         </form>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="show-Bill">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <p><strong>You final bill is...</strong></p>
+                            <p>Size: <span id="displaySize"></span></p>
+                            <p>Crust: <span id="displayCrust"></span></p>
+                            <p>Toppings: <span id="displayToppings"></span></p>
+                            <p>Name: <span id="displayName"></span></p>
+                            <p>Street name: <span id="displayStreet"></span></p>
+                            <p>City: <span id="displayCity"></span></p>
+                            <p>Total cost: <span id="displayTotalCost"></span></p>
+                        </div>
+                    </div>
+                    <div class="panel-footer">Thank You for visiting US !!!</div>
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
         Brancox Studios 2019
