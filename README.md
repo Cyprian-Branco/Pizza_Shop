@@ -1,5 +1,5 @@
 # DELANI STUDIO
-#### Pizza Shop. This is a simple webpage that allows you to choose and purchase pizza of your on type and size.
+#### Pizza Shop. This is a simple webpage that allows you to choose and purchase pizza of your own type and size.
 #### By **Cyprian Bowen**
 
 ## Project live site
