@@ -14,3 +14,15 @@ pizza.prototype.sizePrice = function(){
         alert("Please select the size you would prefer")
     }
 }
+pizza.prototype.crustPrice = function(){
+    if(this.crust === "thin"){
+        return 300
+    }else if(this.crust === "thick"){
+        return 500
+    }else if(this.crust === "deep"){
+        return 500
+    }else{
+        alert("Please select the type of crust you would prefer")
+    }
+}
+pizza.prototype.toppingsPrice
