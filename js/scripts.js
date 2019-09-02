@@ -2,9 +2,10 @@ function Pizza(size, crust, toppings){
     this.size = size
     this.crust = crust
     this.toppings = toppings
+    this.delivery = delivery
 }
 Pizza.prototype.calclulatePrice = function(){
-    var totalCost = this.size + this.crust + this.toppings
+    var totalCost = this.size + this.crust + this.toppings + this.delivery
     $("#displayTotalCost").html(totalCost)
 }
 var pizza
@@ -53,12 +54,14 @@ $(function(){
             alert("Please select the type of crust you would prefer")
         }
         
+        var deliveryFee = $(".delivery").val()
+
         $("#displayName").text(inputtedName)
-        $("displayAddress").text(inputtedAddress)
-        $("displayCity").text(inputtedCity)
-        $("displaySize").text(inputtedSize)
-        $("displayToppings").text(inputtedToppings)
-        $("displayCrust").text(inputtedCrust)
+        $("#displayAddress").text(inputtedAddress)
+        $("#displayCity").text(inputtedCity)
+        $("#displaySize").text(inputtedSize)
+        $("#displayToppings").text(inputtedToppings)
+        $("#displayCrust").text(inputtedCrust)
 
         pizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings)
 
@@ -66,6 +69,6 @@ $(function(){
         var toppingsAmount = pizza.toppings()
         var crustAmount = pizza.crust()
 
-        pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount)
+        pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount, deliveryFee)
     })
 })
