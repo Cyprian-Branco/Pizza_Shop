@@ -1,9 +1,9 @@
-function pizza(size, crust, toppings){
+function Pizza(size, crust, toppings){
     this.size = size
     this.crust = crust
     this.toppings = toppings
 }
-pizza.prototype.sizePrice = function(){
+Pizza.prototype.sizePrice = function(){
     if(this.size === "small"){
         return 800
     }else if(this.size === "medium"){
@@ -14,7 +14,7 @@ pizza.prototype.sizePrice = function(){
         alert("Please select the size you would prefer")
     }
 }
-pizza.prototype.crustPrice = function(){
+Pizza.prototype.crustPrice = function(){
     if(this.crust === "thin"){
         return 300
     }else if(this.crust === "thick"){
@@ -29,7 +29,7 @@ pizza.prototype.crustPrice = function(){
         alert("Please select the type of crust you would prefer")
     }
 }
-pizza.prototype.toppingsPrice = function(){
+Pizza.prototype.toppingsPrice = function(){
     if(this.toppings === "chicken"){
         return 200
     }else if(this.toppings === "pepperoni"){
@@ -42,3 +42,10 @@ pizza.prototype.toppingsPrice = function(){
         alert("Please select the type of crust you would prefer")
     }
 }
+Pizza.prototype.calclulatePrice = function(toppingsPrice, sizePrice, crustPrice){
+    var totalCost = toppingsPrice + sizePrice + crustPrice
+    $("#displayTotalCost").html(totalCost)
+}
+
+
+
