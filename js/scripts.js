@@ -21,8 +21,24 @@ pizza.prototype.crustPrice = function(){
         return 500
     }else if(this.crust === "deep"){
         return 500
+    }else if(this.crust === "stuffed"){
+        return 500
+    }else if(this.crust === "cheese-filled"){
+        return 500
     }else{
         alert("Please select the type of crust you would prefer")
     }
 }
-pizza.prototype.toppingsPrice
+pizza.prototype.toppingsPrice = function(){
+    if(this.toppings === "chicken"){
+        return 200
+    }else if(this.toppings === "pepperoni"){
+        return 200
+    }else if(this.toppings === "cheese"){
+        return 200
+    }else if(this.toppings === "olive"){
+        return 200
+    }else{
+        alert("Please select the type of crust you would prefer")
+    }
+}
