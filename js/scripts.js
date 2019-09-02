@@ -3,60 +3,55 @@ function Pizza(size, crust, toppings){
     this.crust = crust
     this.toppings = toppings
 }
-Pizza.prototype.sizePrice = function(){
-    if(this.size === "small"){
-        return 800
-    }else if(this.size === "medium"){
-        return 1000
-    }else if(this.zie === "large"){
-        return 1300
-    }else{
-        alert("Please select the size you would prefer")
-    }
-}
-Pizza.prototype.crustPrice = function(){
-    if(this.crust === "thin"){
-        return 300
-    }else if(this.crust === "thick"){
-        return 500
-    }else if(this.crust === "deep"){
-        return 500
-    }else if(this.crust === "stuffed"){
-        return 500
-    }else if(this.crust === "cheese-filled"){
-        return 500
-    }else{
-        alert("Please select the type of crust you would prefer")
-    }
-}
-Pizza.prototype.toppingsPrice = function(){
-    if(this.toppings === "chicken"){
-        return 200
-    }else if(this.toppings === "pepperoni"){
-        return 200
-    }else if(this.toppings === "cheese"){
-        return 200
-    }else if(this.toppings === "olive"){
-        return 200
-    }else{
-        alert("Please select the type of crust you would prefer")
-    }
-}
-Pizza.prototype.calclulatePrice = function(toppingsPrice, sizePrice, crustPrice){
-    var totalCost = toppingsPrice + sizePrice + crustPrice
+Pizza.prototype.calclulatePrice = function(){
+    var totalCost = this.size + this.crust + this.toppings
     $("#displayTotalCost").html(totalCost)
 }
-    var pizza;
-    $(function(){
+$(function(){
+    var pizza
     $("#formid").submit(function(event){
         event.preventDefault()
         $("#show-bill").show()
         var inputtedName = $("#name").val()
         var inputtedAddress = $("#address").val()
         var inputtedCity = $("#city").val()
+
         var inputtedSize = $("input:radio[name=size]:checked").val()
+        if(inputtedSize === "small"){
+            return 800
+        }else if(inputtedSize === "medium"){
+            return 1000
+        }else if(inputtedSize === "large"){
+            return 1300
+        }else{
+            alert("Please select the size you would prefer")
+        }
+
         var inputtedToppings = $("input:radio[name=toppings]:checked").val()
+        if(inputtedToppings === "chicken"){
+            return 200
+        }else if(inputtedToppings === "pepperoni"){
+            return 200
+        }else if(inputtedToppings === "cheese"){
+            return 200
+        }else if(inputtedToppings === "olive"){
+            return 200
+        }else{
+            alert("Please select the type of crust you would prefer")
+        }
+
         var inputtedCrust = $("input:radio[name=crust]:checked").val()
+        if(inputtedCrust === "chicken"){
+            return 200
+        }else if(this.inputtedCrust === "pepperoni"){
+            return 200
+        }else if(this.inputtedCrust === "cheese"){
+            return 200
+        }else if(inputtedCrust === "olive"){
+            return 200
+        }else{
+            alert("Please select the type of crust you would prefer")
+        }
         
         $("#displayName").text(inputtedName)
         $("displayAddress").text(inputtedAddress)
