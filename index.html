@@ -21,7 +21,7 @@
         <h1 class="header1">Design your own pizza:</h1>
         <h3 class="header3">Choose the size:</h3>
         <div class="row">
-            <form class="new contact">
+            <form id="formid" class="new contact">
                 <div class="section2">
                     <div class="form-group">
                         <div class="col-md-4">
@@ -48,7 +48,7 @@
     <div class="container">
         <h4 class="header3">Choose the crust:</h4>
         <div class="row">
-            <form >
+            <form id="formid">
                 <div class="section3">
                     <div class="form-group">
                         <div class="col-md-4">
@@ -72,7 +72,7 @@
             </form>
         </div>
         <div class="row">
-            <form>
+            <form id="formid">
                 <div class="section3">
                     <div class="form-group">
                         <div class="col-md-4">
@@ -93,14 +93,14 @@
     <div class="container">
         <h4 class="header3">Choose your toppings:</h4>
         <div class="row">
-            <form>
+            <form id="formid">
                 <div class="section4">
                     <div class="form-group">
                         <div class="col-md-3">
-                            <input type="radio" name="chicken" id="chicken">Chicken
-                            <input type="radio" name="pepperoni" id="pepperoni">Pepperoni
-                            <input type="radio" name="cheese" id="cheese">Cheese
-                            <input type="radio" name="olive" id="olive">Olive
+                            <input type="radio" name="chicken" id="chicken">Chicken: Ksh 200
+                            <input type="radio" name="pepperoni" id="pepperoni">Pepperoni: Ksh. 200
+                            <input type="radio" name="cheese" id="cheese">Cheese: Ksh 200
+                            <input type="radio" name="olive" id="olive">Olive: Ksh 200
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
         </div>
     </div>
     <div class="container">
-        <form >
+        <form id="formid">
             <div class="row">
                 <div class="section5">
                     <div class="form-group">
@@ -133,21 +133,21 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div id="show-bill">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <p><strong>You final bill is...</strong></p>
-                            <p>Size: <span id="displaySize"></span></p>
-                            <p>Crust: <span id="displayCrust"></span></p>
-                            <p>Toppings: <span id="displayToppings"></span></p>
-                            <p>Name: <span id="displayName"></span></p>
-                            <p>Street name: <span id="displayStreet"></span></p>
-                            <p>City: <span id="displayCity"></span></p>
-                            <p>Total cost: <span id="displayTotalCost"></span></p>
-                        </div>
+            <div id="show-bill">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p><strong>You final bill is...</strong></p>
+                        <p>Size: <span id="displaySize"></span></p>
+                        <p>Crust: <span id="displayCrust"></span></p>
+                        <p>Toppings: <span id="displayToppings"></span></p>
+                        <p>Name: <span id="displayName"></span></p>
+                        <p>Street name: <span id="displayStreet"></span></p>
+                        <p>City: <span id="displayCity"></span></p>
+                        <p>Total cost: <span id="displayTotalCost"></span></p>
                     </div>
-                    <div class="panel-footer">Thank You for visiting US !!!</div>
                 </div>
+                <div class="panel-footer">Thank You for visiting US !!!</div>
+            </div>
             </div>
         </div>
     </div>
