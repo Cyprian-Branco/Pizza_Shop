@@ -46,6 +46,31 @@ Pizza.prototype.calclulatePrice = function(toppingsPrice, sizePrice, crustPrice)
     var totalCost = toppingsPrice + sizePrice + crustPrice
     $("#displayTotalCost").html(totalCost)
 }
+    var pizza;
+    $(function(){
+    $("#formid").submit(function(event){
+        event.preventDefault()
+        $("#show-bill").show()
+        var inputtedName = $("#name").val()
+        var inputtedAddress = $("#address").val()
+        var inputtedCity = $("#city").val()
+        var inputtedSize = $("input:radio[name=size]:checked").val()
+        var inputtedToppings = $("input:radio[name=toppings]:checked").val()
+        var inputtedCrust = $("input:radio[name=crust]:checked").val()
+        
+        $("#displayName").text(inputtedName)
+        $("displayAddress").text(inputtedAddress)
+        $("displayCity").text(inputtedCity)
+        $("displaySize").text(inputtedSize)
+        $("displayToppings").text(inputtedToppings)
+        $("displayCrust").text(inputtedCrust)
 
+        pizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings)
 
+        var sizeAmount = pizza.sizePrice()
+        var toppingsAmount = pizza.toppingsPrice()
+        var crustAmount = pizza.crustPrice()
 
+        pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount)
+    })
+})
