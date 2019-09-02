@@ -18,38 +18,41 @@ $(function(){
         var inputtedCity = $("#city").val()
 
         var inputtedSize = $("input:radio[name=size]:checked").val()
+        var sizeAmount = 0
         if(inputtedSize === "small"){
-            return 800
+            sizeAmount = 800
         }else if(inputtedSize === "medium"){
-            return 1000
+            sizeAmount = 1000
         }else if(inputtedSize === "large"){
-            return 1300
+            sizeAmount = 1300
         }else{
             alert("Please select the size you would prefer")
         }
 
         var inputtedToppings = $("input:radio[name=toppings]:checked").val()
+        var toppingsAmount
         if(inputtedToppings === "chicken"){
-            return 200
+            toppingsAmount = 200
         }else if(inputtedToppings === "pepperoni"){
-            return 200
+            toppingsAmount = 200
         }else if(inputtedToppings === "cheese"){
-            return 200
+            toppingsAmount = 200
         }else if(inputtedToppings === "olive"){
-            return 200
+            toppingsAmount = 200
         }else{
             alert("Please select the type of crust you would prefer")
         }
 
         var inputtedCrust = $("input:radio[name=crust]:checked").val()
+        var crustAmount = 0
         if(inputtedCrust === "chicken"){
-            return 200
+            crustAmount = 200
         }else if(this.inputtedCrust === "pepperoni"){
-            return 200
+            crustAmount = 200
         }else if(this.inputtedCrust === "cheese"){
-            return 200
+            crustAmount = 200
         }else if(inputtedCrust === "olive"){
-            return 200
+            crustAmount = 200
         }else{
             alert("Please select the type of crust you would prefer")
         }
@@ -63,12 +66,8 @@ $(function(){
         $("#displayToppings").text(inputtedToppings)
         $("#displayCrust").text(inputtedCrust)
 
-        pizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings)
+        pizza = new Pizza(sizeAmount, crustAmount, toppingsAmount, deliveryFee)
 
-        var sizeAmount = pizza.size()
-        var toppingsAmount = pizza.toppings()
-        var crustAmount = pizza.crust()
-
-        pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount, deliveryFee)
+        
     })
 })
