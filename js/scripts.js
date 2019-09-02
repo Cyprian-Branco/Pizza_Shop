@@ -1,4 +1,4 @@
-function Pizza(size, crust, toppings){
+function Pizza(size, crust, toppings, delivery){
     this.size = size
     this.crust = crust
     this.toppings = toppings
@@ -17,7 +17,7 @@ $(function(){
         var inputtedAddress = $("#address").val()
         var inputtedCity = $("#city").val()
 
-        var inputtedSize = $("input:radio[name=size]:checked").val()
+        var inputtedSize = $("input[name='size']:checked").val()
         var sizeAmount = 0
         if(inputtedSize === "small"){
             sizeAmount = 800
@@ -29,7 +29,7 @@ $(function(){
             alert("Please select the size you would prefer")
         }
 
-        var inputtedToppings = $("input:radio[name=toppings]:checked").val()
+        var inputtedToppings = $("input[name='toppings']:checked").val()
         var toppingsAmount
         if(inputtedToppings === "chicken"){
             toppingsAmount = 300
@@ -43,7 +43,7 @@ $(function(){
             alert("Please select the type of crust you would prefer")
         }
 
-        var inputtedCrust = $("input:radio[name=crust]:checked").val()
+        var inputtedCrust = $("input[name='crust']:checked").val()
         var crustAmount = 0
         if(inputtedCrust === "chicken"){
             crustAmount = 200
@@ -58,16 +58,14 @@ $(function(){
         }
         
         var deliveryFee = $(".delivery").val()
-
+        var pizza
+        pizza = new Pizza(sizeAmount, crustAmount, toppingsAmount, deliveryFee)
         $("#displayName").text(inputtedName)
         $("#displayAddress").text(inputtedAddress)
         $("#displayCity").text(inputtedCity)
         $("#displaySize").text(inputtedSize)
         $("#displayToppings").text(inputtedToppings)
         $("#displayCrust").text(inputtedCrust)
-
-        pizza = new Pizza(sizeAmount, crustAmount, toppingsAmount, deliveryFee)
-
-        
+        &("#displayTotalCost").text(pizza)   
     })
 })
