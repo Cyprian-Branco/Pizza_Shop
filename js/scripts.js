@@ -7,8 +7,8 @@ Pizza.prototype.calclulatePrice = function(){
     var totalCost = this.size + this.crust + this.toppings
     $("#displayTotalCost").html(totalCost)
 }
+var pizza
 $(function(){
-    var pizza
     $("#formid").submit(function(event){
         event.preventDefault()
         $("#show-bill").show()
@@ -62,9 +62,9 @@ $(function(){
 
         pizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings)
 
-        var sizeAmount = pizza.sizePrice()
-        var toppingsAmount = pizza.toppingsPrice()
-        var crustAmount = pizza.crustPrice()
+        var sizeAmount = pizza.size()
+        var toppingsAmount = pizza.toppings()
+        var crustAmount = pizza.crust()
 
         pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount)
     })
