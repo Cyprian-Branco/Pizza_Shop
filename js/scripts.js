@@ -1,71 +1,62 @@
-function Pizza(size, crust, toppings){
+function pizzaOrder(size, crust){ 
     this.size = size
     this.crust = crust
-    this.toppings = toppings
 }
-Pizza.prototype.calclulatePrice = function(){
-    var totalCost = this.size + this.crust + this.toppings
-    $("#displayTotalCost").html(totalCost)
+function addresses(name, address, city){
+    this.name = name
+    this.address = address
+    this.city = city
 }
-var pizza
+pizzaOrder.prototype.calculateCost = function(){
+    var totalCost = this.size + this.crust
+}
+addresses.prototype.checkAddress = function(){
+    return this.name + "," + this.address + "," + this.city
+}
 $(function(){
     $("#formid").submit(function(event){
         event.preventDefault()
-        $("#show-bill").show()
-        var inputtedName = $("#name").val()
-        var inputtedAddress = $("#address").val()
-        var inputtedCity = $("#city").val()
+        var inputSize = $("input[name=size]:checked").val()
+            if(inputSize == "small"){
+                return 800
+            }else if(inputSize == "medium"){
+                return 1000
+            }else if(inputSize == "large"){
+                return 1300
+            }else{
+                alert("Kindly select the size of pizza you would like")
+            }
 
-        var inputtedSize = $("input:radio[name=size]:checked").val()
-        if(inputtedSize === "small"){
-            return 800
-        }else if(inputtedSize === "medium"){
-            return 1000
-        }else if(inputtedSize === "large"){
-            return 1300
-        }else{
-            alert("Please select the size you would prefer")
-        }
+        var inputCrust = $("input[name=crust]:checked").val()
+            if (inputCrust == thin){
+                return 300
+            }else if(inputCrust == thick){
+                return 500
+            }else if(inputCrust == deep){
+                return 500
+            }else if(inputCrust == stuffed){
+                return 400
+            }else if(inputCrust == cheese-filled){
+                return 400
+            }else{
+                alert("kindly select the crust you would like")
+            }
+        var deliveryFee = $(".delivery").val()
+        var inputToppings = $("input[name=toppings").val()
+        var newPizzaOrder = new pizzaOrder(inputSize, inputCrust)
+        var newOrder = newPizzaOrder + deliveryFee
 
-        var inputtedToppings = $("input:radio[name=toppings]:checked").val()
-        if(inputtedToppings === "chicken"){
-            return 200
-        }else if(inputtedToppings === "pepperoni"){
-            return 200
-        }else if(inputtedToppings === "cheese"){
-            return 200
-        }else if(inputtedToppings === "olive"){
-            return 200
-        }else{
-            alert("Please select the type of crust you would prefer")
-        }
+        $("#displaySize").text(inputSize)
+        $("#displayCrust").tex(inpuSize)
+        $("#displayToppings").text(inputToppings)
+        $("#dislayTotalCost").text(newOrder)
 
-        var inputtedCrust = $("input:radio[name=crust]:checked").val()
-        if(inputtedCrust === "chicken"){
-            return 200
-        }else if(this.inputtedCrust === "pepperoni"){
-            return 200
-        }else if(this.inputtedCrust === "cheese"){
-            return 200
-        }else if(inputtedCrust === "olive"){
-            return 200
-        }else{
-            alert("Please select the type of crust you would prefer")
-        }
-        
-        $("#displayName").text(inputtedName)
-        $("displayAddress").text(inputtedAddress)
-        $("displayCity").text(inputtedCity)
-        $("displaySize").text(inputtedSize)
-        $("displayToppings").text(inputtedToppings)
-        $("displayCrust").text(inputtedCrust)
+        var newName = $("#name").val()
+        var newAddress = $("#address").val()
+        var newCity = $("#city").val()
 
-        pizza = new Pizza(inputtedSize, inputtedCrust, inputtedToppings)
+        var newAddress = new addresses(newName, newAddress, newCity)
+        $("#displayName").text() = newAddress + "." +"Your items will be delivered to the listed address."
 
-        var sizeAmount = pizza.size()
-        var toppingsAmount = pizza.toppings()
-        var crustAmount = pizza.crust()
-
-        pizza.calclulatePrice(sizeAmount, toppingsAmount, crustAmount)
     })
 })
