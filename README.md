@@ -1,4 +1,4 @@
-# DELANI STUDIO
+# PIZZA SHOP
 #### Pizza Shop. This is a simple webpage that allows you to choose and purchase pizza of your own type and size.
 #### By **Cyprian Bowen**
 
