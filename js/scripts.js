@@ -8,7 +8,7 @@ Pizza.prototype.calclulatePrice = function(){
     var totalCost = this.size + this.crust + this.toppings + this.delivery
     $("#displayTotalCost").html(totalCost)
 }
-var pizza
+
 $(function(){
     $("#formid").submit(function(event){
         event.preventDefault()
@@ -32,13 +32,13 @@ $(function(){
         var inputtedToppings = $("input:radio[name=toppings]:checked").val()
         var toppingsAmount
         if(inputtedToppings === "chicken"){
-            toppingsAmount = 200
+            toppingsAmount = 300
         }else if(inputtedToppings === "pepperoni"){
-            toppingsAmount = 200
+            toppingsAmount = 500
         }else if(inputtedToppings === "cheese"){
-            toppingsAmount = 200
+            toppingsAmount = 500
         }else if(inputtedToppings === "olive"){
-            toppingsAmount = 200
+            toppingsAmount = 400
         }else{
             alert("Please select the type of crust you would prefer")
         }
