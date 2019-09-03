@@ -42,7 +42,7 @@ $(function(){
                 alert("kindly select the crust you would like")
             }
         var deliveryFee = $(".delivery").val()
-        var inputToppings = $("input[name=toppings").val()
+        var inputToppings = $("input[name=toppings]:checked").val()
         var newPizzaOrder = new pizzaOrder(inputSize, inputCrust)
         var newOrder = newPizzaOrder + deliveryFee
 
