@@ -14,7 +14,7 @@ addresses.prototype.checkAddress = function(){
     return this.name + "," + this.address + "," + this.city
 }
 $(function(){
-    $("#formid").submit(function(event){
+    $("#my_submit").click(function(event){
         event.preventDefault()
         var inputSize = $("input[name=size]:checked").val()
             if(inputSize == "small"){
